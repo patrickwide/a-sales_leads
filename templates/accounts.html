@@ -1,0 +1,207 @@
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!--Custom style.css-->
+    <link rel="stylesheet" href="static/css/quicksand.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="static/css/fontawesome.css">
+    <!--Chartist CSS-->
+    <link rel="stylesheet" href="static/css/chartist.min.css">
+    <!--Bootstrap Calendar-->
+    <link rel="stylesheet" href="static/js/calendar/bootstrap_calendar.css">
+    <!--JsGrid CSS-->
+    <link rel="stylesheet" href="static/css/jsgrid.min.css">
+    <link rel="stylesheet" href="static/css/jsgrid-theme.min.css">
+</head>
+<body>
+
+
+<div class="container p-0">
+
+
+      <!--Custom tabs one-->
+                        <div class="mt-1 mb-3  button-container custom-tabs">
+                            <br/>
+                            <nav class="sticky-top bg-light">
+                                <div class="nav nav-tabs nav-fill " id="nav-customContent" role="tablist">
+                                    <a class="nav-item nav-link active text-theme" id="nav-home" data-toggle="tab" href="#custom-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
+                                    <a class="nav-item nav-link text-theme" id="nav-profile" data-toggle="tab" href="#custom-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Register</a>
+                                    <a class="nav-item nav-link text-theme" id="nav-contact" data-toggle="tab" href="#custom-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Help</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content py-3 px-3 px-sm-0" id="nav-customContent">
+                                <div class="tab-pane fade show active" id="custom-home" role="tabpanel" aria-labelledby="nav-home">
+
+                <small class="text-theme bc-description">{{ msg }}</small>
+
+
+
+<!--next------->
+    <center class="mt-4">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p-0">
+            <div class="">
+
+                <div class="card-body p-0">
+
+            <center>
+                <img src="static/img/jd-150.png" height="125px" width="125px" class="rounded-circle shadow mb-2" />
+                <h3 class="mb-2">Sign In</h3>
+                <small class="text-theme bc-description">{{ text }}</small>
+            </center>
+              <form action="/sign-in" method="POST">
+               <div class="form-group floating-label">
+                    <input class="form-control" name="username_email" type="text" required>
+                    <label for="">User name or Email</label>
+                </div>
+
+
+                <div class="form-group floating-label">
+                    <input class="form-control" type="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-theme btn-block p-2 mb-1">Sign In <i class="fa fa-sign-in mb-2"></i></button>
+                    </div>
+              </form>
+                </div>
+            </div>
+        </div>
+
+
+    </center>
+
+
+
+                                </div>
+                                <div class="tab-pane fade" id="custom-profile" role="tabpanel" aria-labelledby="nav-profile">
+
+<!--next------->
+    <center class="">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 p-0">
+            <div class="">
+                <div class="card-body p-0">
+
+                <center>
+                    <img src="static/img/jd-150.png" height="125px" width="125px" class="rounded-circle shadow mb-2" />
+                    <h3 class="mb-2">Sign up</h3>
+                    <small class="text-muted bc-description">Create new account</small>
+                </center>
+
+              <form action="/sign-up" method="POST" >
+
+                <div class="form-group floating-label">
+                    <input class="form-control" type="text" name="username" required>
+                    <label for="">Username</label>
+                </div>
+
+                <div class="form-group floating-label">
+                    <input class="form-control" type="email" name="email" required>
+                    <label for="">Email</label>
+                </div>
+
+                <div class="form-group floating-label">
+                    <input class="form-control" type="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+
+
+                    <div class="form-group">
+                        <button class="btn btn-theme btn-block p-2 mb-1" type="submit">Sign Up  <i class="fa fa-sign-in mb-2"></i></button>
+                    </div>
+              </form>
+                </div>
+            </div>
+        </div>
+
+
+    </center>
+
+
+
+
+                                </div>
+                                <div class="tab-pane fade" id="custom-contact" role="tabpanel" aria-labelledby="nav-contact">
+
+<!--next------->
+    <center class="">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 p-0">
+            <div class="">
+                <div class="card-body p-0">
+
+                <center>
+                    <img src="static/img/jd-150.png" height="125px" width="125px" class="rounded-circle shadow mb-2" />
+                    <h3 class="mb-2">forgot password</h3>
+                    <small class="text-muted bc-description">Enter email</small>
+                </center>
+
+              <form action="" method="POST">
+
+                <div class="form-group floating-label">
+                    <input class="form-control" type="" required>
+                    <label for="">Email</label>
+                </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-theme btn-block p-2 mb-1">send</button>
+                    </div>
+              </form>
+                </div>
+            </div>
+        </div>
+
+
+    </center>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Custom tabs two-->
+
+</div>
+
+
+
+
+</body>
+    <!-- Page JavaScript Files-->
+    <script src="static/js/jquery.min.js"></script>
+    <!--Popper JS-->
+    <script src="static/js/popper.min.js"></script>
+    <!--Bootstrap-->
+    <script src="static/js/bootstrap.min.js"></script>
+    <!--Sweet alert JS-->
+    <script src="static/js/sweetalert.js"></script>
+    <!--Progressbar JS-->
+    <script src="static/js/progressbar.min.js"></script>
+    <!--Charts-->
+    <!--Canvas JS-->
+    <script src="static/js/charts/canvas.min.js"></script>
+    <!--Bootstrap Calendar JS-->
+    <script src="static/js/calendar/bootstrap_calendar.js"></script>
+    <script src="static/js/calendar/demo.js"></script>
+    <!--Bootstrap Calendar-->
+    <!--JsGrid table-->
+    <script src="static/js/jsgrid.min.js"></script>
+    <script src="static/js/jsgrid-demo.js"></script>
+
+    <!--Custom Js Script-->
+    <script src="static/js/custom.js"></script>
+    <!--Custom Js Script-->
+</html>
+
+
+
+
+
+
+
+

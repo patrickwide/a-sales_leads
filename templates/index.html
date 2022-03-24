@@ -1,0 +1,650 @@
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!--Custom style.css-->
+    <link rel="stylesheet" href="static/css/quicksand.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="static/css/fontawesome.css">
+    <!--Chartist CSS-->
+    <link rel="stylesheet" href="static/css/chartist.min.css">
+    <!--Bootstrap Calendar-->
+    <link rel="stylesheet" href="static/js/calendar/bootstrap_calendar.css">
+    <!--JsGrid CSS-->
+    <link rel="stylesheet" href="static/css/jsgrid.min.css">
+    <link rel="stylesheet" href="static/css/jsgrid-theme.min.css">
+</head>
+<body>
+
+<div class="container p-0">
+
+                         <!--Custom tabs one-->
+                        <div class="mt-1 mb-3  button-container custom-tabs">
+                            <div class="row">
+                                <div class="col">
+                                    <h6 class="text-theme mt-3 m-2"> <strong>Sales_buddy</strong></h6>
+                                </div>
+                                <div class="col">
+                                    <a href="/logout" class="m-2 pull-right btn btn-danger text-light btn-sm">
+                                        <strong>
+                                            Logout <i class="fa fa-sign-out mb-2"></i>
+                                        </strong>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <nav class="sticky-top bg-light pt-2">
+                                <div class="nav nav-tabs  nav-fill" id="nav-customContent" role="tablist">
+                                    <a class="nav-item nav-link active h5 text-theme" id="nav-home" data-toggle="tab" href="#custom-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fa fa-users mb-2"></i></a>
+                                    <a class="nav-item nav-link h5 text-theme" id="nav-profile" data-toggle="tab" href="#custom-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fa fa-pencil mb-2"></i></a>
+                                    <a class="nav-item nav-link h5 text-theme" id="nav-contact" data-toggle="tab" href="#custom-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fa fa-bell mb-2"></i> <span class="badge badge-danger">{{ count }}</span> </a>
+                                </div>
+                            </nav>
+                            <div class="tab-content py-3 px-3 px-sm-0" id="nav-customContent">
+                                <div class="tab-pane fade show active" id="custom-home" role="tabpanel" aria-labelledby="nav-home">
+
+                                    <div class="row mt-2">
+
+                                        <div class="col-md-9">
+                                            <h6 class="text-theme">{{ msg_success }} <i class="fa {{ style_success }} mb-2"></i></h6>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <form action="" class="mb-1">
+                                                <div class="input-group mt-1">
+                                                    <input type="text" class="form-control shadow-sm" placeholder="Search" aria-label="Search keywords" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-theme" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+
+                                        <div class="row"><!---row start-------->
+
+
+                                    {% for row in result %}
+
+
+                                            <div class="col-md-3"><!---contact start here------------->
+
+
+                                                            <!--Chats-->
+                                                            <div class="mt-1 mb-3 button-container rounded border shadow-sm lh-sm">
+                                                                <div class="email-chat-body mt-0">
+
+                                                        <a  data-toggle="collapse" href="#collapseExample{{ row[0] }}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                            <input type="hidden" id="contact_id" value="{{ row[0] }}">
+                                                                    <div class="media p-3">
+                                                                        <img class="align-self-center mr-3 rounded-circle" src="static/img/client-img4.png" width="40px" height="40px" alt="Generic placeholder image">
+                                                                        <div class="media-body dd">
+                                                                            <p><strong>{{ row[2] }}</strong></p>
+                                                                            <small><strong>Posted on:</strong> {{ row[7] }}</small>
+                                                                        </div>
+                                                                    </div>
+                                                        </a>
+                                                        <div class="collapse" id="collapseExample{{ row[0] }}">
+
+                                                                    <div class="button-container bg-white">
+                                                                    <div class="p-2 px-3 mb-0 border-bottom">
+                                                                        <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-phone text-success mr-2"></i> <small>{{ row[1] }}</small> </span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+
+                                                                            <div class="clearfix"></div>
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="p-2 px-3 mb-0 border-bottom">
+                                                                        <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-calendar text-success mr-2"></i> <small>{{ row[3] }}</small></span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+
+                                                                            <div class="clearfix"></div>
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="p-2 px-3 mb-0 border-bottom">
+                                                                        <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-rss text-success mr-2"></i> <small>{{ row[4] }}</small></span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+
+                                                                            <div class="clearfix"></div>
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="p-2 px-3 mb-0 border-bottom">
+                                                                        <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-building text-success mr-2"></i> <small>{{ row[5] }}</small></span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+
+                                                                            <div class="clearfix"></div>
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="p-2">
+                                                                            <h6 class="ml-2"><i class="fa fa-info text-success mr-2"></i> <small>more info</small></h6>
+                                                                            <div class="card">
+                                                                                <p class="card-body p-1">
+                                                                                    {{ row[6] }}
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="dropdown-divider"></div>
+                                                                            <button type="button" class="btn btn-outline-danger " data-toggle="modal" data-target=".c{{ row[0] }}d"><i class="fa fa-trash m-1"></i></button>
+                                                                            <button type="button"  class="btn btn-outline-primary " data-toggle="modal" data-target=".a{{ row[0] }}b"><i class="fa fa-pencil-square-o m-1"></i></button>
+
+                                                                        </div>
+                                                                    </div><!----here-------->
+                                                                </div><!----open an close-------->
+                                                                </div>
+                                                                        </div>
+
+                                                            <div class="modal fade c{{ row[0] }}d" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-sm">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header text-center">
+                                                                            <h5 class="modal-title text-secondary"><strong>Delete contact</strong></h5>
+                                                                            <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                                                                        </div>
+
+                                                            <form action="/delete" method="POST">
+                                                                        <div class="modal-body text-justify">
+                                                                            <p>
+                                                                            <i class="fa fa-exclamation-triangle text-danger h1 mr-2"></i>Once deleted, you will not be able to recover this contact!
+                                                                            </p>
+
+                                                                            <input type="hidden" name="contact_id" value="{{ row[0] }}">
+                                                                            <input type="hidden" name="user_id" value="{{ row[-1] }}">
+
+
+                                                                        </div>
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            <input type="submit" class="btn btn-danger" value="delete">
+                                                                        </div>
+
+                                                                        </form>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <!--Large modal-->
+
+                                                            <div class="modal fade a{{ row[0] }}b" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header text-center">
+                                                                            <h5 class="modal-title text-secondary"><strong>Update contact</strong></h5>
+                                                                            <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                                                                        </div>
+                                                                        <div class="container">
+                                                                        <!--Default bootstrap 4 validation-->
+                                                                        <div class="mt-1 mb-4">
+                                                                            <form class="needs-validation" action="/update" method="POST" novalidate>
+                                                                                <div class="form-row">
+                                                                                    <input type="hidden" name="id" value="{{ row[0] }}">
+                                                                                    <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+
+                                                                                        <label for="validationCustom01">Phone number<span class="text-danger">*</span></label>
+                                                                                        <input type="tel" class="form-control" id="validationCustom01" value="{{ row[1] }}" name="phone" required>
+                                                                                        <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        <div class="valid-feedback">
+                                                                                            Looks good!
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+                                                                                        <label for="validationCustom02">contact name <span class="text-danger">*</span></label>
+                                                                                        <input type="text" class="form-control" id="validationCustom02" value="{{ row[2] }}" name="name" required>
+                                                                                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        <div class="valid-feedback">
+                                                                                            Looks good!
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="row">
+
+                                                                                        <div class="col-md-4 col-md-sm-4 col-xs-12 mb-2">
+                                                                                            <label for="validationCustom06">Date to call <span class="text-danger">*</span></label>
+                                                                                            <input type="date" class="form-control" id="validationCustom06" name="date_to_call" value="{{ row[3] }}" required>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            <div class="valid-feedback">
+                                                                                                Looks good!
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-sm-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                                            <input type="hidden" >
+                                                                                            <div class="form-group">
+                                                                                                <label for="">Interested package <span class="text-danger">*</span></label>
+                                                                                                <select class="custom-select" name="package">
+                                                                                                    <option value="{{ row[4] }}">{{ row[4] }}</option>
+                                                                                                        <option value="j10 duo">j10</option>
+                                                                                                        <option value="j20 duo">j20</option>
+                                                                                                        <option value="j60 duo">j60</option>
+
+                                                                                                        <option value="i10">J10B</option>
+                                                                                                        <option value="i20">J20B</option>
+                                                                                                        <option value="i60">J60B</option>
+
+                                                                                                        <option value="j5 pawa">j5 pawa</option>
+                                                                                                        <option value="j10 pawa">j10 pawa</option>
+                                                                                                        <option value="j20 pawa">j20 pawa</option>
+
+                                                                                                </select>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            </div>
+                                                                                        </div>
+
+
+
+                                                                                        <div class="col-md-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                                            <label for="validationCustom06">Area/house name<span class="text-danger">*</span></label>
+                                                                                            <input type="text" class="form-control" id="validationCustom06" name="area" value="{{ row[5] }}" required>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        </div>
+
+
+
+
+                                                                                        <div class="col-sm-12 col-md-sm-12 col-xs-12  mb-2">
+                                                                                            <label for="Rlength1">Additional detail<span class="text-danger">(optional)</span></label>
+                                                                                            <textarea id="Rlength1" class="form-control" name="more" >{{ row[6] }}</textarea>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                        </div>
+
+                                                                                </div>
+
+
+                                                                                <button class="btn btn-primary" type="submit"><strong>Save</strong>  <i class="fa fa-paper-plane mr-1"></i>  </button>
+                                                                            </form>
+                                                                        </div>
+                                                                        <!--/Default bootstrap validation-->
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--/Large modal-->
+
+                                            </div><!---end of the contact---------->
+
+                                    {% endfor %}
+
+
+
+
+
+                                    </div><!---row end ------------->
+
+                                </div><!---end of the first tab space--------->
+                                <div class="tab-pane fade" id="custom-profile" role="tabpanel" aria-labelledby="nav-profile">
+
+                                            <!--Default bootstrap 4 validation-->
+                                            <div class="mt-1 mb-4">
+                                                <h6 class="mb-2">Add contact</h6>
+
+                                                <form class="needs-validation" action="/add_contacts" method="POST" novalidate>
+                                                    <div class="form-row">
+                                                        <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+                                                            <label for="validationCustom01">Phone number<span class="text-danger">*</span></label>
+                                                            <input type="tel" class="form-control" id="validationCustom01" placeholder="Enter phone no" name="phone" required>
+                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                            <div class="valid-feedback">
+                                                                Looks good!
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+                                                            <label for="validationCustom02">contact name <span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" id="validationCustom02" placeholder="Enter name" name="name" required>
+                                                                    <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                            <div class="valid-feedback">
+                                                                Looks good!
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+
+                                                            <div class="col-md-4 col-md-sm-4 col-xs-12 mb-2">
+                                                                <label for="validationCustom06">Date to call <span class="text-danger">*</span></label>
+                                                                <input type="date" class="form-control" id="validationCustom06" name="date_to_call" placeholder="Enter area/house" required>
+                                                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                <div class="valid-feedback">
+                                                                    Looks good!
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                <div class="form-group">
+                                                                    <label for="">Interested package <span class="text-danger">*</span></label>
+                                                                    <select class="custom-select" name="package" required>
+                                                                        <option value="j10 duo">j10</option>
+                                                                        <option value="j20 duo">j20</option>
+                                                                        <option value="j60 duo">j60</option>
+
+                                                                        <option value="i10">J10B</option>
+                                                                        <option value="i20">J20B</option>
+                                                                        <option value="i60">J60B</option>
+
+                                                                        <option value="j5 pawa">j5 pawa</option>
+                                                                        <option value="j10 pawa">j10 pawa</option>
+                                                                        <option value="j20 pawa">j20 pawa</option>
+                                                                    </select>
+                                                                <div class="valid-feedback">Looks good!</div>
+                                                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div class="col-md-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                <label for="validationCustom06">Area/house name<span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="validationCustom06" name="area" placeholder="Enter Area/house name" required>
+                                                                <div class="valid-feedback">Looks good!</div>
+                                                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                            </div>
+
+
+
+
+                                                            <div class="col-sm-12 col-md-sm-12 col-xs-12  mb-2">
+                                                                <label for="Rlength1">Additional detail<span class="text-danger">(optional)</span></label>
+                                                                <textarea id="Rlength1" class="form-control" name="more" cols="20" rows="4" placeholder="Enter more details"></textarea>
+                                                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                <div class="valid-feedback">Looks good!</div>
+                                                            </div>
+
+                                                    </div>
+
+
+                                                    <button class="btn btn-primary" type="submit"><strong>Save</strong>  <i class="fa fa-paper-plane mr-1"></i>  </button>
+                                                </form>
+                                            </div>
+                                            <!--/Default bootstrap validation-->
+
+                                </div>
+                                <div class="tab-pane fade" id="custom-contact" role="tabpanel" aria-labelledby="nav-contact">
+
+
+
+
+                                        <div class="row"><!---row start-------->
+
+
+                                    <h6 class="text-theme"><i class="fa {{ style }} mb-2"></i> {{ msg }}</h6>
+                                    {% for row in resulted %}
+
+                                                                 <div class="col-md-3"><!---contact start here------------->
+
+
+                                                                <!--Chats-->
+                                                                <div class="mt-1 mb-3 button-container rounded border shadow-sm lh-sm">
+                                                                <div class="email-chat-body mt-0">
+
+                                                                    <a  data-toggle="collapse" href="#collapse{{ row[0] }}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                                    <div class="media p-3">
+                                                                    <img class="align-self-center mr-3 rounded-circle" src="static/img/client-img4.png" width="40px" height="40px" alt="Generic placeholder image">
+                                                                    <div class="media-body dd">
+                                                                    <p><strong>{{ row[2] }}</strong></p>
+                                                                    <small><strong>Posted on:</strong> {{ row[7] }}</small>
+                                                                    </div>
+                                                                    </div>
+                                                                    </a>
+                                                                <div class="collapse" id="collapse{{ row[0] }}">
+
+                                                                        <div class="button-container bg-white">
+                                                                            <div class="p-2 px-3 mb-0 border-bottom">
+                                                                            <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-phone text-success mr-2"></i> <small>{{ row[1] }}</small> </span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+                                                                            <div class="clearfix"></div>
+                                                                            </h6>
+                                                                            </div>
+
+                                                                            <div class="p-2 px-3 mb-0 border-bottom">
+                                                                            <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-calendar text-success mr-2"></i> <small>{{ row[3] }}</small> </span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+                                                                            <div class="clearfix"></div>
+                                                                            </h6>
+                                                                            </div>
+
+                                                                            <div class="p-2 px-3 mb-0 border-bottom">
+                                                                            <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-rss text-success mr-2"></i> <small>{{ row[4] }}</small></span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+
+                                                                            <div class="clearfix"></div>
+                                                                            </h6>
+                                                                            </div>
+
+                                                                            <div class="p-2 px-3 mb-0 border-bottom">
+                                                                            <h6 class="mb-0"><span class="align-bottom" style="line-height: 35px;"><i class="fa fa-building text-success mr-2"></i> <small>{{ row[5] }}</small></span>
+                                                                            <a href="" class="btn btn-theme btn-round shadow-sm pull-right"><i class="fa fa-copy"></i></a>
+                                                                            <div class="clearfix"></div>
+                                                                            </h6>
+                                                                            </div>
+
+                                                                            <div class="p-2">
+
+                                                                            <h6 class="ml-2"><i class="fa fa-info text-success mr-2"></i> <small>more info</small></h6>
+                                                                            <div class="card">
+                                                                            <p class="card-body p-1">
+                                                                            {{ row[6] }}
+                                                                            </p>
+                                                                            </div>
+                                                                            <div class="dropdown-divider"></div>
+
+                                                                            <button type="button" class="btn btn-outline-danger " data-toggle="modal" data-target=".d{{ row[0] }}e><i class="fa fa-trash m-1"></i></button>
+                                                                            <button type="button"  class="btn btn-outline-primary " data-toggle="modal" data-target=".a{{ row[0] }}c"><i class="fa fa-pencil-square-o m-1"></i></button>
+
+
+
+
+
+                                                            <div class="modal fade d{{ row[0] }}e" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-sm">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header text-center">
+                                                                            <h5 class="modal-title text-secondary"><strong>Delete contact</strong></h5>
+                                                                            <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                                                                        </div>
+                                                                            <form action="/delete" method="POST">
+
+                                                                        <div class="modal-body text-justify">
+                                                                            <p>
+                                                                            <i class="fa fa-exclamation-triangle h1 text-danger mr-2"></i>Once deleted, you will not be able to recover this contact!
+                                                                            </p>
+
+                                                                            <input type="hidden" name="contact_id" value="{{ row[0] }}">
+                                                                            <input type="hidden" name="user_id" value="{{ row[-1] }}">
+
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            <input type="submit" class="btn btn-danger" value="delete">
+                                                                        </div>
+                                                                            </form>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <!--Large modal-->
+
+                                                            <div class="modal fade a{{ row[0] }}c" id="home" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header text-center">
+                                                                            <h5 class="modal-title text-secondary"><strong>Update contact</strong></h5>
+                                                                            <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                                                                        </div>
+                                                                        <div class="container">
+                                                                        <!--Default bootstrap 4 validation-->
+                                                                        <div class="mt-1 mb-4">
+                                                                            <form class="needs-validation" action="/update" method="POST" novalidate>
+                                                                                <div class="form-row">
+                                                                                    <input type="hidden" name="id" value="{{ row[0] }}">
+                                                                                    <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+
+                                                                                        <label for="validationCustom01">Phone number<span class="text-danger">*</span></label>
+                                                                                        <input type="tel" class="form-control" id="validationCustom01" value="{{ row[1] }}" name="phone" required>
+                                                                                        <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        <div class="valid-feedback">
+                                                                                            Looks good!
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+                                                                                        <label for="validationCustom02">contact name <span class="text-danger">*</span></label>
+                                                                                        <input type="text" class="form-control" id="validationCustom02" value="{{ row[2] }}" name="name" required>
+                                                                                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        <div class="valid-feedback">
+                                                                                            Looks good!
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="row">
+
+                                                                                        <div class="col-md-4 col-md-sm-4 col-xs-12 mb-2">
+                                                                                            <label for="validationCustom06">Date to call <span class="text-danger">*</span></label>
+                                                                                            <input type="date" class="form-control" id="validationCustom06" name="date_to_call" value="{{ row[3] }}" required>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            <div class="valid-feedback">
+                                                                                                Looks good!
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-sm-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                                            <input type="hidden" >
+                                                                                            <div class="form-group">
+                                                                                                <label for="">Interested package <span class="text-danger">*</span></label>
+                                                                                                <select class="custom-select" name="package">
+                                                                                                    <option value="{{ row[4] }}">{{ row[4] }}</option>
+                                                                                                        <option value="j10 duo">j10</option>
+                                                                                                        <option value="j20 duo">j20</option>
+                                                                                                        <option value="j60 duo">j60</option>
+
+                                                                                                        <option value="i10">J10B</option>
+                                                                                                        <option value="i20">J20B</option>
+                                                                                                        <option value="i60">J60B</option>
+
+                                                                                                        <option value="j5 pawa">j5 pawa</option>
+                                                                                                        <option value="j10 pawa">j10 pawa</option>
+                                                                                                        <option value="j20 pawa">j20 pawa</option>
+
+
+                                                                                                </select>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            </div>
+                                                                                        </div>
+
+
+
+                                                                                        <div class="col-md-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                                            <label for="validationCustom06">Area/house name<span class="text-danger">*</span></label>
+                                                                                            <input type="text" class="form-control" id="validationCustom06" name="area" value="{{ row[5] }}" required>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        </div>
+
+
+
+
+                                                                                        <div class="col-sm-12 col-md-sm-12 col-xs-12  mb-2">
+                                                                                            <label for="Rlength1">Additional detail<span class="text-danger">(optional)</span></label>
+                                                                                            <textarea id="Rlength1" class="form-control" name="more" >{{ row[6] }}</textarea>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                        </div>
+
+                                                                                </div>
+
+
+                                                                                <button class="btn btn-primary" type="submit"><strong>Save</strong>  <i class="fa fa-paper-plane mr-1"></i>  </button>
+                                                                            </form>
+                                                                        </div>
+                                                                        <!--/Default bootstrap validation-->
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/Large modal-->
+
+
+
+
+
+
+
+
+                                                                            </div>
+                                                                </div><!----here-------->
+                                                                </div><!----open an close-------->
+                                                                </div>
+                                                                </div>
+                                                                </div><!---end of the contact---------->
+
+                                    {% endfor %}
+
+
+
+                                    </div><!---row end ------------->
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Custom tabs two-->
+
+</div>
+
+
+</body>
+
+    <script src="static/js/delete_contact.js"></script>
+
+    <!-- Page JavaScript Files-->
+    <script src="static/js/jquery.min.js"></script>
+    <!--Popper JS-->
+    <script src="static/js/popper.min.js"></script>
+    <!--Bootstrap-->
+    <script src="static/js/bootstrap.min.js"></script>
+    <!--Sweet alert JS-->
+    <script src="static/js/sweetalert.js"></script>
+    <!--Progressbar JS-->
+    <script src="static/js/progressbar.min.js"></script>
+    <!--Charts-->
+    <!--Canvas JS-->
+    <script src="static/js/charts/canvas.min.js"></script>
+    <!--Bootstrap Calendar JS-->
+    <script src="static/js/calendar/bootstrap_calendar.js"></script>
+    <script src="static/js/calendar/demo.js"></script>
+    <!--Bootstrap Calendar-->
+    <!--JsGrid table-->
+    <script src="static/js/jsgrid.min.js"></script>
+    <script src="static/js/jsgrid-demo.js"></script>
+
+    <!--Custom Js Script-->
+    <script src="static/js/custom.js"></script>
+    <!--Custom Js Script-->
+</html>
+
+
+
+
+
+
+
+

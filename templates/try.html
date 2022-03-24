@@ -1,0 +1,252 @@
+
+                                                <div class="modal fade c{{ row[0] }}d" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header text-center">
+                                                                <h5 class="modal-title text-secondary"><strong>Delete contact</strong></h5>
+                                                                <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <div class="modal-body text-justify">
+                                                                <p>
+                                                                <i class="fa fa-info text-danger mr-2"></i>Once deleted, you will not be able to recover this contact!
+                                                                </p>
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                <a href="/delete" type="button" class="btn btn-danger" data-dismiss="modal">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+SSID:	Xender_KaiOS855a
+Protocol:	802.11g
+Security type:	Open
+Network band:	2.4 GHz
+Network channel:	6
+IPv4 address:	192.168.43.123
+IPv4 DNS Servers:	192.168.43.1
+Manufacturer:	Broadcom
+Description:	Dell Wireless 1397 WLAN Mini-Card
+Driver version:	5.100.245.200
+Physical address (MAC):	‎00-24-2C-31-7E-C5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <!--Large modal-->
+
+                                                            <div class="modal fade a{{ row[0] }}c" id="home" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header text-center">
+                                                                            <h5 class="modal-title text-secondary"><strong>Update contact</strong></h5>
+                                                                            <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                                                                        </div>
+                                                                        <div class="container">
+                                                                        <!--Default bootstrap 4 validation-->
+                                                                        <div class="mt-1 mb-4">
+                                                                            <form class="needs-validation" action="/update" method="POST" novalidate>
+                                                                                <div class="form-row">
+                                                                                    <input type="hidden" name="id" value="{{ row[0] }}">
+                                                                                    <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+
+                                                                                        <label for="validationCustom01">Phone number<span class="text-danger">*</span></label>
+                                                                                        <input type="tel" class="form-control" id="validationCustom01" value="{{ row[1] }}" name="phone" required>
+                                                                                        <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        <div class="valid-feedback">
+                                                                                            Looks good!
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-6 col-md-sm-6 col-xs-12 mb-2">
+                                                                                        <label for="validationCustom02">contact name <span class="text-danger">*</span></label>
+                                                                                        <input type="text" class="form-control" id="validationCustom02" value="{{ row[2] }}" name="name" required>
+                                                                                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        <div class="valid-feedback">
+                                                                                            Looks good!
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="row">
+
+                                                                                        <div class="col-md-4 col-md-sm-4 col-xs-12 mb-2">
+                                                                                            <label for="validationCustom06">Date to call <span class="text-danger">*</span></label>
+                                                                                            <input type="date" class="form-control" id="validationCustom06" name="date_to_call" value="{{ row[3] }}" required>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            <div class="valid-feedback">
+                                                                                                Looks good!
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-sm-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                                            <input type="hidden" >
+                                                                                            <div class="form-group">
+                                                                                                <label for="">Interested package <span class="text-danger">*</span></label>
+                                                                                                <select class="custom-select" name="package">
+                                                                                                    <option value="{{ row[4] }}">{{ row[4] }}</option>
+                                                                                                    <option value="j10 duo">j10 duo</option>
+                                                                                                    <option value="j20 duo">j20 duo</option>
+                                                                                                    <option value="j60 duo">j60 duo</option>
+
+                                                                                                    <option value="i10">i10</option>
+                                                                                                    <option value="i20">i20</option>
+                                                                                                    <option value="i60">i60</option>
+
+                                                                                                    <option value="j5 pawa">j5 pawa</option>
+                                                                                                    <option value="j10 pawa">j10 pawa</option>
+                                                                                                    <option value="j20 pawa">j20 pawa</option>
+
+
+
+                                                                                                </select>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            </div>
+                                                                                        </div>
+
+
+
+                                                                                        <div class="col-md-4 col-md-sm-4 col-xs-12  mb-2">
+                                                                                            <label for="validationCustom06">Area/house name<span class="text-danger">*</span></label>
+                                                                                            <input type="text" class="form-control" id="validationCustom06" name="area" value="{{ row[5] }}" required>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                        </div>
+
+
+
+
+                                                                                        <div class="col-sm-12 col-md-sm-12 col-xs-12  mb-2">
+                                                                                            <label for="Rlength1">Additional detail<span class="text-danger">(optional)</span></label>
+                                                                                            <textarea id="Rlength1" class="form-control" name="more" >{{ row[6] }}</textarea>
+                                                                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                                                            <div class="valid-feedback">Looks good!</div>
+                                                                                        </div>
+
+                                                                                </div>
+
+
+                                                                                <button class="btn btn-primary" type="submit"><strong>Save</strong>  <i class="fa fa-paper-plane mr-1"></i>  </button>
+                                                                            </form>
+                                                                        </div>
+                                                                        <!--/Default bootstrap validation-->
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/Large modal-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="mb-2">
+                                        <label for="validationCustom04">State <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid state.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <label for="validationCustom05">Zip <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid zip.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-group">
+                                            <label for="">Years of experience <span class="text-danger">*</span></label>
+                                            <select class="custom-select" required>
+                                                <option value="">Open this select menu</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 mb-2 mt-1">
+                                        <label for="">Custom file input <span class="text-danger">*</span></label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="custom-control custom-radio mb-0">
+                                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+                                    <label class="custom-control-label" for="customControlValidation2">Male</label>
+                                </div>
+
+                                <div class="custom-control custom-radio mb-2">
+                                    <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+                                    <label class="custom-control-label" for="customControlValidation3">Female</label>
+                                    <div class="invalid-feedback">More example invalid feedback text</div>
+                                </div>
+
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                                    <label class="custom-control-label" for="customControlValidation1">Accept terms and conditions <span class="text-danger">*</span></label>
+                                    <div class="invalid-feedback">Example invalid feedback text</div>
+                                </div>
+
+                                <button class="btn btn-primary" type="submit">Submit form</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
